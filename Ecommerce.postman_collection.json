@@ -1,0 +1,276 @@
+{
+  "info": {
+    "_postman_id": "1dc8d203-b577-4219-a034-51ec3ac7c6de",
+    "name": "Ecommerce",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47660269",
+    "_collection_link": "https://go.postman.co/collection/47660269-1dc8d203-b577-4219-a034-51ec3ac7c6de?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Creating user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\":\"prabhdeep singh\",\n  \"email\":\"prabhdeep@gmail.com\",\n  \"role\":\"USER\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add product",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\":\"Macbook\",\n  \"price\":13202,\n  \"stock\":10\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add to cart",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\":\"696e3202151d1ebc5ccc1d72\",\n  \"productId\":\"696e320f151d1ebc5ccc1d73\",\n  \"quantity\":5\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/cart",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cart"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "view cart",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/cart/696e3202151d1ebc5ccc1d72",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cart",
+            "696e3202151d1ebc5ccc1d72"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create order",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\":\"696e3202151d1ebc5ccc1d72\",\n  \"totalAmount\":1600,\n  \"status\":\"CREATED\",\n  \"createdAt\":\"2026-01-19T13:02:00Z\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/orders/create/696e3202151d1ebc5ccc1d72",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "orders",
+            "create",
+            "696e3202151d1ebc5ccc1d72"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create payment razorpay",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"orderId\":\"696e3202151d1ebc5ccc1d72\",\n  \"amount\":1600\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/payments/create",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "payments",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "mark payment success",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/payments/success/696e3202151d1ebc5ccc1d72",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "payments",
+            "success",
+            "696e3202151d1ebc5ccc1d72"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "make order paid",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/orders/pay/696e3256151d1ebc5ccc1d75",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "orders",
+            "pay",
+            "696e3256151d1ebc5ccc1d75"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get orders",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/orders/696e3256151d1ebc5ccc1d75",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "orders",
+            "696e3256151d1ebc5ccc1d75"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get payment details",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/payments/order/696e3256151d1ebc5ccc1d75",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "payments",
+            "order",
+            "696e3256151d1ebc5ccc1d75"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
