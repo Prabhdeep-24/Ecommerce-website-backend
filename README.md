@@ -1,39 +1,32 @@
-\documentclass[12pt]{article}
-\usepackage[a4paper, margin=1in]{geometry}
+# 🛒 E-Commerce Backend
 
-\title{E-Commerce Backend}
+A backend system for an e-commerce application built using **Spring Boot**, **MongoDB**, and **Razorpay**.
 
-\begin{document}
-\maketitle
+---
 
-\section*{About}
-This project is a backend system for an e-commerce application built using Spring Boot and MongoDB.  
-It supports product management, cart operations, order processing and Razorpay payment integration.
+## 🚀 Tech Stack
+- Spring Boot  
+- MongoDB  
+- Razorpay Payment Gateway  
+- Maven  
+- Postman (API Testing)
 
-\section*{Tech Stack}
-\begin{itemize}
-    \item Spring Boot
-    \item MongoDB
-    \item Razorpay
-    \item Maven
-\end{itemize}
+---
 
-\section*{Features}
-\begin{itemize}
-    \item User creation
-    \item Add and view products
-    \item Add items to cart with stock validation
-    \item Create orders from cart
-    \item Online payment using Razorpay
-\end{itemize}
+## ✨ Features
+- User registration (unique email validation)
+- Product management
+- Cart system with stock validation
+- Order creation
+- Razorpay payment integration
+- Order status update after payment
 
-\section*{Run Project}
-\begin{itemize}
-    \item Configure MongoDB
-    \item Add Razorpay keys
-\end{itemize}
+---
 
-\section*{Testing}
-All APIs are tested using Postman.
-
-\end{document}
+## ▶ How to Run
+1. Clone the repository  
+2. Configure MongoDB in `application.properties`  
+3. Add Razorpay API keys  
+4. Run the project:
+```bash
+mvn spring-boot:run
